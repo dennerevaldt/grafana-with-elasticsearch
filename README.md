@@ -1,4 +1,4 @@
-## Grafana with Elastic Search
+## Grafana with Elasticsearch
 
 ## Instructions
 
