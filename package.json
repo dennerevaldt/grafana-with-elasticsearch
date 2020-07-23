@@ -1,0 +1,14 @@
+{
+  "name": "grafana-elasticsearch",
+  "version": "1.0.0",
+  "description": "Project to study Grafana with Elastic search data store",
+  "main": "index.js",
+  "scripts": {
+    "makelogs": "./node_modules/.bin/makelogs"
+  },
+  "author": "Denner Machado",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/makelogs": "^6.0.0"
+  }
+}

@@ -1,0 +1,37 @@
+version: '2.2'
+services:
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+    container_name: elasticSearch
+    environment:
+      - node.name=es01
+      - cluster.name=es-docker-cluster
+      - cluster.initial_master_nodes=es01
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data01:/usr/share/es01/data
+    networks:
+      - elastic
+    ports: 
+      - 9200:9200
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    networks:
+      - elastic
+    ports: 
+      - 3000:3000
+
+volumes:
+  data01:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
