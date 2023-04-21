@@ -9,6 +9,6 @@
   "author": "Denner Machado",
   "license": "ISC",
   "dependencies": {
-    "@elastic/makelogs": "^6.0.0"
+    "@elastic/makelogs": "^6.1.1"
   }
 }
